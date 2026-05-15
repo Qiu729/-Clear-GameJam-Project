@@ -1,0 +1,169 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwfw63o4exew5"]
+
+[ext_resource type="Script" uid="uid://4ldiygeeivck" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="PackedScene" uid="uid://crtvacgwvggnc" path="res://tips.tscn" id="2_7vrkn"]
+[ext_resource type="Gradient" uid="uid://c86wg7dm32n8p" path="res://Arts/mainMenu.tres" id="2_fu7sn"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jix8l"]
+gradient = ExtResource("2_fu7sn")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_glbon"]
+gradient = ExtResource("2_fu7sn")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_06t4h")
+
+[node name="P1Panel" type="Panel" parent="."]
+modulate = Color(0.9372549, 0.26666668, 0.26666668, 1)
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="P1Panel"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 143.94948
+offset_bottom = 162.88887
+scale = Vector2(3.96, 3.96)
+texture = SubResource("GradientTexture2D_jix8l")
+
+[node name="Label" type="Label" parent="P1Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 256.0
+offset_right = 192.0
+offset_bottom = 320.0
+theme_override_font_sizes/font_size = 40
+text = "Player1"
+
+[node name="OptionButton" type="OptionButton" parent="P1Panel"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 256.0
+offset_right = 448.0
+offset_bottom = 320.0
+
+[node name="des" type="Label" parent="P1Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 200.0
+offset_right = 448.0
+offset_bottom = 249.0
+text = "移动：wasd/Ls(xbox)  技能/确认：f/a(xbox)
+取消/菜单：g/b(xbox)  ai代理:h/y(xbox)  "
+
+[node name="typeDes" type="Label" parent="P1Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 328.0
+offset_right = 448.0
+offset_bottom = 416.0
+
+[node name="P2Panel" type="Panel" parent="."]
+modulate = Color(0, 0.30980393, 0.54509807, 1)
+layout_mode = 0
+offset_left = 576.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TextureRect2" type="TextureRect" parent="P2Panel"]
+layout_mode = 0
+offset_left = -3.9999728
+offset_top = -1.0
+offset_right = 142.21208
+offset_bottom = 162.88887
+scale = Vector2(3.96, 3.96)
+texture = SubResource("GradientTexture2D_glbon")
+
+[node name="Label" type="Label" parent="P2Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 256.0
+offset_right = 208.0
+offset_bottom = 320.0
+theme_override_font_sizes/font_size = 40
+text = "Player2"
+
+[node name="OptionButton" type="OptionButton" parent="P2Panel"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 256.0
+offset_right = 448.0
+offset_bottom = 320.0
+
+[node name="des2" type="Label" parent="P2Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 200.0
+offset_right = 448.0
+offset_bottom = 249.0
+text = "移动：方向键/Ls(xbox)  技能/确认：leftCtrl/0/a(xbox)
+取消/菜单：leftShift/./b(xbox)  ai代理:PD/Enter(keyBoard)/y(xbox)"
+
+[node name="typeDes" type="Label" parent="P2Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 328.0
+offset_right = 448.0
+offset_bottom = 416.0
+
+[node name="StartButton" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 384.0
+offset_top = 448.0
+offset_right = 768.0
+offset_bottom = 576.0
+theme_override_font_sizes/font_size = 45
+text = "开始游戏"
+
+[node name="Tips" parent="." instance=ExtResource("2_7vrkn")]
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 14.4
+anchor_top = 3.2
+anchor_right = 14.4
+anchor_bottom = 3.2
+offset_left = -320.0
+offset_top = -64.0
+offset_right = 320.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "CLEANER"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="des" type="Label" parent="."]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 412.0
+offset_right = 562.0
+offset_bottom = 435.0
+text = "难度选择"
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 409.0
+offset_right = 619.0
+offset_bottom = 440.0
+selected = 0
+item_count = 3
+popup/item_0/text = "1"
+popup/item_0/id = 0
+popup/item_1/text = "2"
+popup/item_1/id = 1
+popup/item_2/text = "3"
+popup/item_2/id = 2

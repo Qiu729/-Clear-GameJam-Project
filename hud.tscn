@@ -1,0 +1,210 @@
+[gd_scene load_steps=10 format=3 uid="uid://5pc23tg5d1rf"]
+
+[ext_resource type="Script" uid="uid://b1gbyv82ewrlr" path="res://hud_player.gd" id="1_37p78"]
+[ext_resource type="StyleBox" uid="uid://banqlaqd8v6gb" path="res://Arts/p2_blue.tres" id="2_64ctp"]
+[ext_resource type="Texture2D" uid="uid://bm3li0nounfwe" path="res://Arts/hp.tres" id="2_640wx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64ctp"]
+bg_color = Color(0.9372549, 0.26666668, 0.26666668, 1)
+skew = Vector2(-0.2, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sq4i"]
+bg_color = Color(0.9372549, 0.26666668, 0.26666668, 1)
+skew = Vector2(-0.2, 0)
+
+[sub_resource type="Gradient" id="Gradient_640wx"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.246431, 0.246431, 0.246431, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a2258"]
+gradient = SubResource("Gradient_640wx")
+
+[sub_resource type="Gradient" id="Gradient_a2258"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1xsix"]
+gradient = SubResource("Gradient_a2258")
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_37p78")
+
+[node name="HUD_P1" type="Control" parent="."]
+custom_minimum_size = Vector2(320, 80)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_right = 336.0
+offset_bottom = 80.0
+
+[node name="BackGround" type="Panel" parent="HUD_P1"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_64ctp")
+
+[node name="Content" type="MarginContainer" parent="HUD_P1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBox" type="HBoxContainer" parent="HUD_P1/Content"]
+layout_mode = 2
+
+[node name="AvatarBox" type="PanelContainer" parent="HUD_P1/Content/HBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8sq4i")
+
+[node name="Label" type="Label" parent="HUD_P1/Content/HBox/AvatarBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "P1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InfoBox" type="VBoxContainer" parent="HUD_P1/Content/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="HBoxContainer" parent="HUD_P1/Content/HBox/InfoBox"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Name" type="Label" parent="HUD_P1/Content/HBox/InfoBox/Header"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "P1 "
+
+[node name="Value" type="Label" parent="HUD_P1/Content/HBox/InfoBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 0
+vertical_alignment = 2
+
+[node name="score" type="Label" parent="HUD_P1/Content/HBox/InfoBox/Header"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+vertical_alignment = 2
+
+[node name="HPBar" type="TextureProgressBar" parent="HUD_P1/Content/HBox/InfoBox"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_vertical = 4
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture2D_a2258")
+texture_progress = ExtResource("2_640wx")
+
+[node name="SkillBar" type="TextureProgressBar" parent="HUD_P1/Content/HBox/InfoBox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture2D_1xsix")
+
+[node name="HUD_P2" type="Control" parent="."]
+custom_minimum_size = Vector2(320, 80)
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -336.0
+offset_right = -16.0
+offset_bottom = 80.0
+grow_horizontal = 0
+
+[node name="BackGround" type="Panel" parent="HUD_P2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_64ctp")
+
+[node name="Content" type="MarginContainer" parent="HUD_P2"]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBox" type="HBoxContainer" parent="HUD_P2/Content"]
+layout_mode = 2
+
+[node name="AvatarBox" type="PanelContainer" parent="HUD_P2/Content/HBox"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_64ctp")
+
+[node name="Label" type="Label" parent="HUD_P2/Content/HBox/AvatarBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "P2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InfoBox" type="VBoxContainer" parent="HUD_P2/Content/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="HBoxContainer" parent="HUD_P2/Content/HBox/InfoBox"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Name" type="Label" parent="HUD_P2/Content/HBox/InfoBox/Header"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "P1 "
+
+[node name="Value" type="Label" parent="HUD_P2/Content/HBox/InfoBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 0
+vertical_alignment = 2
+
+[node name="score" type="Label" parent="HUD_P2/Content/HBox/InfoBox/Header"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+vertical_alignment = 2
+
+[node name="HPBar" type="TextureProgressBar" parent="HUD_P2/Content/HBox/InfoBox"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_vertical = 4
+fill_mode = 1
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture2D_a2258")
+texture_progress = ExtResource("2_640wx")
+
+[node name="SkillBar" type="TextureProgressBar" parent="HUD_P2/Content/HBox/InfoBox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+fill_mode = 1
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture2D_1xsix")

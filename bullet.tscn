@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg7p2n8qkk7dt"]
+
+[ext_resource type="Script" uid="uid://d0p1ncdo23lgf" path="res://Bullet.gd" id="1_sy5k4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7oki"]
+size = Vector2(39.1304, 39.1304)
+
+[sub_resource type="Gradient" id="Gradient_v7oki"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v8qja"]
+gradient = SubResource("Gradient_v7oki")
+fill = 1
+fill_from = Vector2(0.491453, 0.512821)
+
+[node name="Bullet" type="Area2D"]
+position = Vector2(78, 61)
+scale = Vector2(0.23, 0.23)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_sy5k4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.923705, 0.614164, 0.256973, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(19.5652, 19.5652)
+shape = SubResource("RectangleShape2D_v7oki")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 1.71661e-05)
+scale = Vector2(0.679348, 0.679348)
+texture = SubResource("GradientTexture2D_v8qja")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://xoo3tt5k27i0"]
+
+[ext_resource type="Script" uid="uid://dm1m2r1osg30j" path="res://egg.gd" id="1_6upkn"]
+
+[sub_resource type="Gradient" id="Gradient_60cwx"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s80rl"]
+gradient = SubResource("Gradient_60cwx")
+fill = 1
+fill_from = Vector2(0.5, 0.4957265)
+fill_to = Vector2(0.9230769, 0.11965812)
+
+[node name="egg" type="Area2D"]
+position = Vector2(596, 321)
+script = ExtResource("1_6upkn")
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_s80rl")
+
+[node name="InteractionTimer" type="Timer" parent="."]

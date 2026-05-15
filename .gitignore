@@ -1,0 +1,15 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Build output
+Build/
+
+# Demo files
+演示文件/
+
+# Archives
+*.zip
+
+# Local settings
+.claude/settings.local.json

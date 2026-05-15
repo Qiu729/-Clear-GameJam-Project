@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmmvjlrge7are"]
+
+[ext_resource type="Script" uid="uid://bahu0sx5uy4gr" path="res://laser_orb.gd" id="1_2b41q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g3mdd"]
+radius = 40.0
+
+[sub_resource type="Gradient" id="Gradient_2b41q"]
+offsets = PackedFloat32Array(0, 0.4, 0.9876543)
+colors = PackedColorArray(0.9542483, 0.9542483, 0.9542483, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wkite"]
+gradient = SubResource("Gradient_2b41q")
+fill = 1
+fill_from = Vector2(0.5, 0.508547)
+fill_to = Vector2(0.9230769, 0.094017096)
+
+[node name="LaserOrb" type="Area2D"]
+collision_layer = 4
+collision_mask = 6
+script = ExtResource("1_2b41q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g3mdd")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(1.25, 1.25)
+texture = SubResource("GradientTexture2D_wkite")

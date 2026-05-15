@@ -1,0 +1,11 @@
+[gd_resource type="GradientTexture2D" load_steps=2 format=3 uid="uid://cdlmr7dqjfv0k"]
+
+[sub_resource type="Gradient" id="Gradient_doa88"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.19764706, 0.19764706, 0.19764706, 1)
+
+[resource]
+gradient = SubResource("Gradient_doa88")
+width = 50
+height = 4

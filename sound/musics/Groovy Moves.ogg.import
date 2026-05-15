@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://tx34l6yy4rkt"
+path="res://.godot/imported/Groovy Moves.ogg-289b3a0aaa839ed97891447c7e0dd9ce.oggvorbisstr"
+
+[deps]
+
+source_file="res://sound/musics/Groovy Moves.ogg"
+dest_files=["res://.godot/imported/Groovy Moves.ogg-289b3a0aaa839ed97891447c7e0dd9ce.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
